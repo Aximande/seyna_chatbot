@@ -1,0 +1,13 @@
+div.row-widget.stRadio>div {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+div.row-widget.stRadio>div[role="radiogroup"]>label[data-baseweb="radio"] {
+    background-color: #323439;
+    padding-right: 30px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 4px;
+}
