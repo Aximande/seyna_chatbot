@@ -136,7 +136,7 @@ def agent_rag(loader, template, doc_type="PDF"):
 
 def query(agent, question):
     with st.spinner("Waiting for response..."):
-        response = agent({"input": question})
+        response = agent.invoke({"input": question})
         if "text" in response:
             response = response["text"]
         else:
@@ -150,6 +150,7 @@ def update_agent(file):
             st.session_state.previous_agent["category"] != st.session_state.categorie
             or st.session_state.previous_agent["job"] != st.session_state.tache
             or st.session_state.previous_agent["document"] != st.session_state.document
+            or st.session_state.previous_agent["model"] != st.session_state.model
         )
 
     def file_changed():
@@ -162,10 +163,11 @@ def update_agent(file):
         st.session_state.previous_agent["category"] = st.session_state.categorie
         st.session_state.previous_agent["job"] = st.session_state.tache
         st.session_state.previous_agent["document"] = st.session_state.document
+        st.session_state.previous_agent["model"] = st.session_state.model
         st.session_state.file = file
 
         with st.spinner("Preparing agent..."):
-            if st.session_state.document == "PDF":
+            if st.session_state.document == "PDF" and st.model == "OpenAI":
                 if file is None:
                     st.session_state.agent = None
                 else:
@@ -176,7 +178,7 @@ def update_agent(file):
                         templates[st.session_state.categorie][st.session_state.tache],
                         "PDF",
                     )
-            elif st.session_state.document == "CSV":
+            elif st.session_state.document == "CSV" and st.model == "OpenAI":
                 if file is None:
                     st.session_state.agent = None
                 else:
@@ -200,6 +202,7 @@ if "messages" not in st.session_state:
         "category": "Gestion de sinistre",
         "job": "Sinistre 1",
         "document": "Aucun",
+        "model": "OpenAI",
     }
 
 st.set_page_config(page_title="Assistant chatbot")
@@ -241,17 +244,19 @@ st.radio(
     key="tache",
 )
 
-st.radio(
-    "Document ?",
-    ("Aucun", "PDF", "CSV"),
-    key="document",
-)
+if st.session_state.model == "OpenAI":
+    st.radio(
+        "Document ?",
+        ("Aucun", "PDF", "CSV"),
+        key="document",
+    )
 
-
-if st.session_state.document == "PDF":
-    file = st.file_uploader("Selectionnez le pdf", type="pdf")
-elif st.session_state.document == "CSV":
-    file = st.file_uploader("Selectionnez le csv", type="csv")
+    if st.session_state.document == "PDF":
+        file = st.file_uploader("Selectionnez le pdf", type="pdf")
+    elif st.session_state.document == "CSV":
+        file = st.file_uploader("Selectionnez le csv", type="csv")
+    else:
+        file = None
 else:
     file = None
 
