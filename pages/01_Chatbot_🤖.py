@@ -167,7 +167,10 @@ def update_agent(file):
         st.session_state.file = file
 
         with st.spinner("Preparing agent..."):
-            if st.session_state.document == "PDF" and st.model == "OpenAI":
+            if (
+                st.session_state.document == "PDF"
+                and st.session_state.model == "OpenAI"
+            ):
                 if file is None:
                     st.session_state.agent = None
                 else:
@@ -178,7 +181,10 @@ def update_agent(file):
                         templates[st.session_state.categorie][st.session_state.tache],
                         "PDF",
                     )
-            elif st.session_state.document == "CSV" and st.model == "OpenAI":
+            elif (
+                st.session_state.document == "CSV"
+                and st.session_state.model == "OpenAI"
+            ):
                 if file is None:
                     st.session_state.agent = None
                 else:
