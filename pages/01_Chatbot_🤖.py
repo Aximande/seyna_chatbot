@@ -264,6 +264,7 @@ if st.session_state.model == "OpenAI":
     else:
         file = None
 else:
+    st.session_state.document = "Aucun"
     file = None
 
 update_agent(file)
