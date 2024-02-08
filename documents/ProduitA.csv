@@ -1,0 +1,27 @@
+Catégorie,Type de frais,Remboursement Produit A,Reste à charge
+Hospitalisation,Forfait Journalier hospitalier (hébergement),€20.00,€0.00
+Hospitalisation,Chambre particulière pour une nuit,€70.00,€0.00
+Hospitalisation,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),€24.00,€0.00
+Hospitalisation,Honoraires médecins adhérents OPTAM,€84.00,€0.00
+Hospitalisation,Honoraires médecins secteur 2 (non adhérents OPTAM),€175.00,€1.00
+Hospitalisation,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),€654.00,€0.00
+Soins courants,Consultation d'un médecin traitant généraliste,€7.50,€1.00
+Soins courants,Consultation d'un pédiatre pour un enfant de moins de 6 ans,€9.60,€0.00
+Soins courants,Consultation d'un médecin spécialiste,€9.00,€1.00
+Soins courants,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,€9.60,€0.00
+Soins courants,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",€23.00,€0.00
+Soins courants,Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,€19.50,€19.50
+Soins courants,Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,€19.50,€22.40
+Soins courants,Matériel médical (achat d'une paire de béquilles),€11.60,€0.00
+Dentaire,Couronne (prothèses 100% Santé),€416.00,€0.00
+Dentaire,Détartrage (soins hors 100% Santé),"13,00 €",€0.00
+Dentaire,Couronne céramo-métallique sur molaire (hors 100% Santé),"193,00 €","269,00 €"
+Dentaire,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),"193,00 €","334,00 €"
+Optique,Verres simples et Monture (100% Santé),"91,00 €","1,00 €"
+Optique,Verres progressifs et Monture (100% Santé),€172.00,€1.00
+Optique,Verres simples et Monture (hors 100% Santé),"250,00 €","88,91 €"
+Optique,Verres progressifs et Monture (hors 100% Santé),"350,00 €","250,00 €"
+Optique,Lentilles,"109,00 €",€0.00
+Optique,Chirurgie réfractive,"250,00 €","1 650,00 €"
+Aides Auditives,Par oreille pour un patient de plus de 20 ans (100% Santé),€710.00,€0.00
+Aides Auditives,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),€160.00,"€1,100.00"

@@ -1,0 +1,131 @@
+Catégorie,Sous Catégorie,Type de frais,Détails Financiers des Remboursements,Niveau 1,Niveau 2,Niveau 3,Niveau 4,Niveau 5,Niveau 6
+Hospitalisation,,Forfait Journalier hospitalier (hébergement),Dépense (tarif réglementaire),€20.00,€20.00,€20.00,€20.00,€20.00,€20.00
+Hospitalisation,,Forfait Journalier hospitalier (hébergement),Base de remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Forfait Journalier hospitalier (hébergement),Remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Forfait Journalier hospitalier (hébergement),Remboursement Produit B,€20.00,€20.00,€20.00,€20.00,€20.00,€20.00
+Hospitalisation,,Forfait Journalier hospitalier (hébergement),Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Chambre particulière pour une nuit,Dépense (prix moyen national de l'acte),€66.59,€66.59,€66.59,€66.59,€66.59,€66.59
+Hospitalisation,,Chambre particulière pour une nuit,Base de remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Chambre particulière pour une nuit,Remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Chambre particulière pour une nuit,Remboursement Produit B,€0.00,€30.00,€45.00,€60.00,€70.00,€80.00
+Hospitalisation,,Chambre particulière pour une nuit,Reste à charge,€66.59,€36.59,€21.59,€6.59,€0.00,€0.00
+Hospitalisation,,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),Dépense (tarif moyen),€745.54,€745.54,€745.54,€745.54,€745.54,€745.54
+Hospitalisation,,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),Base de remboursement de la sécurité sociale,€745.54,€745.54,€745.54,€745.54,€745.54,€745.54
+Hospitalisation,,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),Remboursement de la sécurité sociale,€721.54,€721.54,€721.54,€721.54,€721.54,€721.54
+Hospitalisation,,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),Remboursement Produit B,€24.00,€24.00,€24.00,€24.00,€24.00,€24.00
+Hospitalisation,,Frais de séjour (opération chirurgicale de la cataracte en secteur privé),Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Honoraires médecins adhérents OPTAM,Dépense (tarif moyen),€355.00,€355.00,€355.00,€355.00,€355.00,€355.00
+Hospitalisation,,Honoraires médecins adhérents OPTAM,Base de remboursement de la sécurité sociale,€271.00,€271.00,€271.00,€271.00,€271.00,€271.00
+Hospitalisation,,Honoraires médecins adhérents OPTAM,Remboursement de la sécurité sociale,€271.00,€271.00,€271.00,€271.00,€271.00,€271.00
+Hospitalisation,,Honoraires médecins adhérents OPTAM,Remboursement Produit B,€0.00,€67.00,€84.00,€84.00,€84.00,€84.00
+Hospitalisation,,Honoraires médecins adhérents OPTAM,Reste à charge,€84.00,€17.00,€0.00,€0.00,€0.00,€0.00
+Hospitalisation,,Honoraires médecins secteur 2 (non adhérents OPTAM),Dépense (tarif moyen),€447.00,€447.00,€447.00,€447.00,€447.00,€447.00
+Hospitalisation,,Honoraires médecins secteur 2 (non adhérents OPTAM),Base de remboursement de la sécurité sociale,€271.00,€271.00,€271.00,€271.00,€271.00,€271.00
+Hospitalisation,,Honoraires médecins secteur 2 (non adhérents OPTAM),Remboursement de la sécurité sociale,€271.00,€271.00,€271.00,€271.00,€271.00,€271.00
+Hospitalisation,,Honoraires médecins secteur 2 (non adhérents OPTAM),Remboursement Produit B,€0.00,€13.00,€81.00,€175.00,€175.00,€175.00
+Hospitalisation,,Honoraires médecins secteur 2 (non adhérents OPTAM),Reste à charge,€176.00,€163.00,€95.00,€1.00,€1.00,€1.00
+Hospitalisation,,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),Dépense (tarif moyen),"€3,270.00","€3,270.00","€3,270.00","€3,270.00","€3,270.00","€3,270.00"
+Hospitalisation,,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),Base de remboursement de la sécurité sociale,"€3,270.00","€3,270.00","€3,270.00","€3,270.00","€3,270.00","€3,270.00"
+Hospitalisation,,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),Remboursement de la sécurité sociale,"€2,616.00","€2,616.00","€2,616.00","€2,616.00","€2,616.00","€2,616.00"
+Hospitalisation,,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),Remboursement Produit B,€654.00,€654.00,€654.00,€654.00,€654.00,€654.00
+Hospitalisation,,Frais de séjour (suivi d'une pneumonie ou pleurésie pour un patient de plus de 17 ans en hôpital public),Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Soins courants,Conventionnés secteur 1,Consultation d'un médecin traitant généraliste,Dépense (tarif conventionnel),€25.00,€25.00,€25.00,€25.00,€25.00,€25.00
+Soins courants,Conventionnés secteur 1,Consultation d'un médecin traitant généraliste,Base de remboursement de la sécurité sociale,€25.00,€25.00,€25.00,€25.00,€25.00,€25.00
+Soins courants,Conventionnés secteur 1,Consultation d'un médecin traitant généraliste,Remboursement de la sécurité sociale,€16.50,€16.50,€16.50,€16.50,€16.50,€16.50
+Soins courants,Conventionnés secteur 1,Consultation d'un médecin traitant généraliste,Remboursement Produit B,€7.50,€7.50,€7.50,€7.50,€7.50,€7.50
+Soins courants,Conventionnés secteur 1,Consultation d'un médecin traitant généraliste,Reste à charge,€1.00,€1.00,€1.00,€1.00,€1.00,€1.00
+Soins courants,Conventionnés secteur 2,Consultation d'un pédiatre pour un enfant de moins de 6 ans,Dépense (tarif conventionnel),€32.00,€32.00,€32.00,€32.00,€32.00,€32.00
+Soins courants,Conventionnés secteur 2,Consultation d'un pédiatre pour un enfant de moins de 6 ans,Base de remboursement de la sécurité sociale,€32.00,€32.00,€32.00,€32.00,€32.00,€32.00
+Soins courants,Conventionnés secteur 2,Consultation d'un pédiatre pour un enfant de moins de 6 ans,Remboursement de la sécurité sociale,€22.40,€22.40,€22.40,€22.40,€22.40,€22.40
+Soins courants,Conventionnés secteur 2,Consultation d'un pédiatre pour un enfant de moins de 6 ans,Remboursement Produit B,€9.60,€9.60,€9.60,€9.60,€9.60,€9.60
+Soins courants,Conventionnés secteur 2,Consultation d'un pédiatre pour un enfant de moins de 6 ans,Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Soins courants,Conventionnés secteur 3,Consultation d'un médecin spécialiste,Dépense (tarif conventionnel),€30.00,€30.00,€30.00,€30.00,€30.00,€30.00
+Soins courants,Conventionnés secteur 3,Consultation d'un médecin spécialiste,Base de remboursement de la sécurité sociale,€30.00,€30.00,€30.00,€30.00,€30.00,€30.00
+Soins courants,Conventionnés secteur 3,Consultation d'un médecin spécialiste,Remboursement de la sécurité sociale,€20.00,€20.00,€20.00,€20.00,€20.00,€20.00
+Soins courants,Conventionnés secteur 3,Consultation d'un médecin spécialiste,Remboursement Produit B,€9.00,€9.00,€9.00,€9.00,€9.00,€9.00
+Soins courants,Conventionnés secteur 3,Consultation d'un médecin spécialiste,Reste à charge,€1.00,€1.00,€1.00,€1.00,€1.00,€1.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,Dépense (tarif moyen),€32.00,€32.00,€32.00,€32.00,€32.00,€32.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,Base de remboursement de la sécurité sociale,€32.00,€32.00,€32.00,€32.00,€32.00,€32.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,Remboursement de la sécurité sociale,€22.40,€22.40,€22.40,€22.40,€22.40,€22.40
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,Remboursement Produit B,€9.60,€9.60,€9.60,€9.60,€9.60,€9.60
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,Consultation d'un Pédiatre pour un enfant de moins de 6 ans,Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",Dépense (tarif moyen),€40.00,€40.00,€40.00,€40.00,€40.00,€40.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",Base de remboursement de la sécurité sociale,€30.00,€30.00,€30.00,€30.00,€30.00,€30.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",Remboursement de la sécurité sociale,€20.00,€20.00,€20.00,€20.00,€20.00,€20.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",Remboursement Produit B,€9.00,€9.00,€16.00,€23.00,€23.00,€23.00
+Soins courants,Adhérents OPTAM à dépassements maîtrisés,"Consultation médecin spécialiste pour un patient de plus de 18 ans (gynécologie, dermatologie, etc.)",Reste à charge,€11.00,€11.00,€4.00,€0.00,€0.00,€0.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,Dépense (tarif moyen),€55.00,€55.00,€55.00,€55.00,€55.00,€55.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,Base de remboursement de la sécurité sociale,€23.00,€23.00,€23.00,€23.00,€23.00,€23.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,Remboursement de la sécurité sociale,€16.00,€16.00,€16.00,€16.00,€16.00,€16.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,Remboursement Produit B,€6.90,€6.90,€8.50,€13.80,€19.50,€29.90
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un pédiatre pour enfant de 2 à 16 ans conventionné secteur 2,Reste à charge,€32.10,€32.10,€30.50,€25.20,€19.50,€9.10
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,Dépense (tarif moyen),€57.00,€57.00,€57.00,€57.00,€57.00,€57.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,Base de remboursement de la sécurité sociale,€23.00,€23.00,€23.00,€23.00,€23.00,€23.00
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,Remboursement de la sécurité sociale,€15.10,€15.10,€15.10,€15.10,€15.10,€15.10
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,Remboursement Produit B,€6.90,€6.90,€8.50,€13.80,€19.50,€29.90
+Soins courants,Conventionnés secteur 2 (Non adhérent OPTAM),Consultation d'un médecin traitant spécialiste pour un adulte conventionné secteur 2,Reste à charge,€35.00,€35.00,€33.40,€28.10,€22.40,€12.00
+Soins courants,Autres,Matériel médical (achat d'une paire de béquilles),Dépense (tarif moyen facturé),€25.80,€25.80,€25.80,€25.80,€25.80,€25.80
+Soins courants,Autres,Matériel médical (achat d'une paire de béquilles),Base de remboursement de la sécurité sociale,€24.40,€24.40,€24.40,€24.40,€24.40,€24.40
+Soins courants,Autres,Matériel médical (achat d'une paire de béquilles),Remboursement de la sécurité sociale,€14.60,€14.60,€14.60,€14.60,€14.60,€14.60
+Soins courants,Autres,Matériel médical (achat d'une paire de béquilles),Remboursement Produit B,€9.70,€9.70,€9.70,€11.60,€11.60,€11.60
+Soins courants,Autres,Matériel médical (achat d'une paire de béquilles),Reste à charge,€1.50,€1.50,€1.50,€0.00,€0.00,€0.00
+Dentaire,,Couronne (prothèses 100% Santé),Dépense (honoraire limite de facturation),€500.00,€500.00,€500.00,€500.00,€500.00,€500.00
+Dentaire,,Couronne (prothèses 100% Santé),Base de remboursement de la sécurité sociale,€120.00,€120.00,€120.00,€120.00,€120.00,€120.00
+Dentaire,,Couronne (prothèses 100% Santé),Remboursement de la sécurité sociale,€84.00,€84.00,€84.00,€84.00,€84.00,€84.00
+Dentaire,,Couronne (prothèses 100% Santé),Remboursement Produit B,€300.00,€310.00,€320.00,€330.00,€340.00,€350.00
+Dentaire,,Couronne (prothèses 100% Santé),Reste à charge,€116.00,€106.00,€96.00,€86.00,€76.00,€66.00
+Dentaire,,Détartrage (soins hors 100% Santé),Dépense (tarif de convention),€43.00,€43.00,€43.00,€43.00,€43.00,€43.00
+Dentaire,,Détartrage (soins hors 100% Santé),Base de remboursement de la sécurité sociale,€43.00,€43.00,€43.00,€43.00,€43.00,€43.00
+Dentaire,,Détartrage (soins hors 100% Santé),Remboursement de la sécurité sociale,€30.00,€30.00,€30.00,€30.00,€30.00,€30.00
+Dentaire,,Détartrage (soins hors 100% Santé),Remboursement Produit B,€1.00,€2.00,€4.00,€5.00,€6.00,€10.00
+Dentaire,,Détartrage (soins hors 100% Santé),Reste à charge,€12.00,€11.00,€9.00,€8.00,€7.00,€3.00
+Dentaire,,Couronne céramo-métallique sur molaire (hors 100% Santé),Dépense (prix moyen national de l'acte),€537.00,€537.00,€537.00,€537.00,€537.00,€537.00
+Dentaire,,Couronne céramo-métallique sur molaire (hors 100% Santé),Base de remboursement de la sécurité sociale,€107.00,€107.00,€107.00,€107.00,€107.00,€107.00
+Dentaire,,Couronne céramo-métallique sur molaire (hors 100% Santé),Remboursement de la sécurité sociale,€75.00,€75.00,€75.00,€75.00,€75.00,€75.00
+Dentaire,,Couronne céramo-métallique sur molaire (hors 100% Santé),Remboursement Produit B,€10.00,€20.00,€30.00,€40.00,€50.00,€60.00
+Dentaire,,Couronne céramo-métallique sur molaire (hors 100% Santé),Reste à charge...,€452.00,€442.00,€432.00,€422.00,€412.00,€402.00
+Dentaire,,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),Dépense (tarif réglementaire),€720.00,€720.00,€720.00,€720.00,€720.00,€720.00
+Dentaire,,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),Base de remboursement de la sécurité sociale,€193.00,€193.00,€193.00,€193.00,€193.00,€193.00
+Dentaire,,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),Remboursement de la sécurité sociale,€193.00,€193.00,€193.00,€193.00,€193.00,€193.00
+Dentaire,,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),Remboursement Produit B,€0.00,€0.00,€10.00,€20.00,€30.00,€40.00
+Dentaire,,Traitement d'orthodontie par semestre (moins de 16 ans) (6 semestres max),Reste à charge,€527.00,€527.00,€517.00,€507.00,€497.00,€487.00
+Optique,,Verres simples et Monture (100% Santé),Dépense (prix limite de vente),€112.00,€112.00,€112.00,€112.00,€112.00,€112.00
+Optique,,Verres simples et Monture (100% Santé),Base de remboursement de la sécurité sociale,€34.00,€34.00,€34.00,€34.00,€34.00,€34.00
+Optique,,Verres simples et Monture (100% Santé),Remboursement de la sécurité sociale,€20.00,€20.00,€20.00,€20.00,€20.00,€20.00
+Optique,,Verres simples et Monture (100% Santé),Remboursement Produit B,€50.00,€60.00,€97.00,€100.00,€120.00,€130.00
+Optique,,Verres simples et Monture (100% Santé),Reste à charge.,€42.00,€32.00,€0.00,€0.00,€0.00,€0.00
+Optique,,Verres progressifs et Monture (100% Santé),Dépense (prix limite de vente),€210.00,€210.00,€210.00,€210.00,€210.00,€210.00
+Optique,,Verres progressifs et Monture (100% Santé),Base de remboursement de la sécurité sociale,€63.00,€63.00,€63.00,€63.00,€63.00,€63.00
+Optique,,Verres progressifs et Monture (100% Santé),Remboursement de la sécurité sociale,€37.00,€37.00,€37.00,€37.00,€37.00,€37.00
+Optique,,Verres progressifs et Monture (100% Santé),Remboursement Produit B,€172.00,€172.00,€172.00,€172.00,€172.00,€172.00
+Optique,,Verres progressifs et Monture (100% Santé),Reste à charge.,€1.00,€1.00,€1.00,€1.00,€1.00,€1.00
+Optique,,Verres simples et Monture (hors 100% Santé),Dépense (prix limite de vente),€339.00,€339.00,€339.00,€339.00,€339.00,€339.00
+Optique,,Verres simples et Monture (hors 100% Santé),Base de remboursement de la sécurité sociale,€0.15,€0.15,€0.15,€0.15,€0.15,€0.15
+Optique,,Verres simples et Monture (hors 100% Santé),Remboursement de la sécurité sociale,€0.09,€0.09,€0.09,€0.09,€0.09,€0.09
+Optique,,Verres simples et Monture (hors 100% Santé),Remboursement Produit B,€20.00,€140.00,€187.00,€230.00,€300.00,€335.00
+Optique,,Verres simples et Monture (hors 100% Santé),Reste à charge.,€318.91,€198.91,€151.91,€108.91,€38.91,€3.91
+Optique,,Verres progressifs et Monture (hors 100% Santé),Dépense (prix limite de vente),€601.00,€601.00,€601.00,€601.00,€601.00,€601.00
+Optique,,Verres progressifs et Monture (hors 100% Santé),Base de remboursement de la sécurité sociale,€0.15,€0.15,€0.15,€0.15,€0.15,€0.15
+Optique,,Verres progressifs et Monture (hors 100% Santé),Remboursement de la sécurité sociale,€0.09,€0.09,€0.09,€0.09,€0.09,€0.09
+Optique,,Verres progressifs et Monture (hors 100% Santé),Remboursement Produit B,€40.00,€220.00,€290.00,€330.00,€400.00,€600.00
+Optique,,Verres progressifs et Monture (hors 100% Santé),Reste à charge.,€560.91,€380.91,€310.91,€270.91,€200.91,€0.91
+Optique,,Lentilles,Dépense (prix moyen national de l'acte),€156.00,€156.00,€156.00,€156.00,€156.00,€156.00
+Optique,,Lentilles,Base de remboursement de la sécurité sociale,€78.00,€78.00,€78.00,€78.00,€78.00,€78.00
+Optique,,Lentilles,Remboursement de la sécurité sociale,€47.00,€47.00,€47.00,€47.00,€47.00,€47.00
+Optique,,Lentilles,Remboursement Produit B,€40.00,€90.00,€120.00,€120.00,€120.00,€120.00
+Optique,,Lentilles,Reste à charge,€69.00,€19.00,€0.00,€0.00,€0.00,€0.00
+Optique,,Chirurgie réfractive,Dépense (prix moyen national de l'acte),"€1,900.00","€1,900.00","€1,900.00","€1,900.00","€1,900.00","€1,900.00"
+Optique,,Chirurgie réfractive,Base de remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Optique,,Chirurgie réfractive,Remboursement de la sécurité sociale,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Optique,,Chirurgie réfractive,Remboursement Produit B,€20.00,€250.00,€500.00,€700.00,€900.00,"€1,300.00"
+Optique,,Chirurgie réfractive,Reste à charge,"€1,880.00","€1,650.00","€1,400.00","€1,200.00","€1,000.00",€600.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (100% Santé),Dépense (prix limite de vente),€950.00,€950.00,€950.00,€950.00,€950.00,€950.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (100% Santé),Base de remboursement de la sécurité sociale,€400.00,€400.00,€400.00,€400.00,€400.00,€400.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (100% Santé),Remboursement de la sécurité sociale,€240.00,€240.00,€240.00,€240.00,€240.00,€240.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (100% Santé),Remboursement Produit B,€710.00,€710.00,€710.00,€710.00,€710.00,€710.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (100% Santé),Reste à charge,€0.00,€0.00,€0.00,€0.00,€0.00,€0.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),Dépense (prix moyen national de l'acte),"€1,500.00","€1,500.00","€1,500.00","€1,500.00","€1,500.00","€1,500.00"
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),Base de remboursement de la sécurité sociale,€400.00,€400.00,€400.00,€400.00,€400.00,€400.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),Remboursement de la sécurité sociale,€240.00,€240.00,€240.00,€240.00,€240.00,€240.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),Remboursement Produit B,€160.00,€160.00,€160.00,€160.00,€160.00,€160.00
+Aides Auditives,,Par oreille pour un patient de plus de 20 ans (hors 100% Santé),Reste à charge,"€1,100.00","€1,100.00","€1,100.00","€1,100.00","€1,100.00","€1,100.00"

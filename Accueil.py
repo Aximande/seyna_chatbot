@@ -17,3 +17,8 @@ st.write("3. Dall-E 🎨")
 st.write("Vous pouvez accéder à ces pages via le menu de gauche.")
 st.write("Pour commencer, vous pouvez vous rendre sur la page Chatbot.")
 st.write("Bonne visite !")
+
+
+# il faut un 3ieme cat d'assistant
+# avoir une page avec des docs precharges FAQ etc... et/ou ajouter des docs
+# cross csv comparaison
