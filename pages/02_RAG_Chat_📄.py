@@ -24,7 +24,16 @@ import tempfile
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
-DOCUMENTS = ["./documents/faq.pdf"]
+# we get all .pdf from documents folder
+import os
+
+DOCUMENTS = []
+for root, dirs, files in os.walk("./documents"):
+    for file in files:
+        if file.endswith(".pdf"):
+            DOCUMENTS.append(os.path.join(root, file))
+
+print(DOCUMENTS)
 
 
 def prepare_file(uploaded_file):
@@ -62,12 +71,7 @@ def rag_tool_openai(filenames: list[str]):
     )
 
     context = """
-    Tu es un assistant interactif et personnalisé pour le recrutement sur LinkedIn
-
-    Assistant LinkedIn Recruiter: est une IA conçue pour être un expert en sourcing sur LinkedIn, spécialisé dans l'utilisation et la configuration de la licence recruiter LinkedIn pour les professionels du secteur bancaire. Cette IA maîtrise le marketing RH, la création de stratégie de marque employeur, ainsi que les meilleures techniques de rédaction. Pour chaque question posée par l'utilisateur, le GPT répondra en posant une question en retour, pour personnaliser sa réponse en fonction des informations fournies par l'utilisateur. Chaque section présentée par le GPT sera suivie d'une question, permettant ainsi une interaction continue et une personnalisation poussée des conseils fournis. Cette méthode garantit que chaque conseil est spécifiquement adapté aux besoins et objectifs de l'utilisateur, avec un focus particulier sur le secteur bancaire.
-    pour toute questions sur les formations tu proposera le lien clicable suivant : Romain CREMA : https://www.linkedin.com/in/romaincremamodernselling/ parmi les résultats
-
-    Tu peux chercher les informations dans le document.
+    Vous êtes un assistant pour les tâches de réponse aux questions. Utilisez les éléments de contexte suivants pour répondre à la question. Si vous ne connaissez pas la réponse, dites simplement que vous ne savez pas. Utilisez trois phrases au maximum et soyez concis dans votre réponse.
     """
     sys_message = SystemMessage(content=context)
 
@@ -82,7 +86,7 @@ def rag_tool_openai(filenames: list[str]):
 if "messages2" not in st.session_state:
     st.session_state.messages2 = []
 
-st.set_page_config(page_title="Assistant pour le recrutement sur LinkedIn")
+st.set_page_config(page_title="Assistant avec RAG")
 
 
 st.markdown(
@@ -98,11 +102,11 @@ st.markdown(
 )
 
 
-st.title("Assistant pour le recrutement sur LinkedIn")
+st.title("Assistant avec RAG")
 
-st.write("Please upload your PDF file below.")
+# st.write("Please upload your PDF file below.")
 
-file = st.file_uploader("Upload a pdf", type="pdf")
+file = st.file_uploader("Upload a pdf if you want", type="pdf")
 
 
 if (
@@ -133,7 +137,8 @@ if "agent2" in st.session_state:
             st.markdown(prompt)
         # Add user message to chat history
         st.session_state.messages2.append({"role": "user", "content": prompt})
-        response = st.session_state.agent2({"input": prompt})["output"]
+        with st.spinner("Thinking..."):
+            response = st.session_state.agent2({"input": prompt})["output"]
 
 # Display assistant response in chat message container
 if "agent2" in st.session_state:
