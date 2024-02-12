@@ -50,35 +50,34 @@ def ask_agent(agent, query):
     """
     # Prepare the prompt with query guidelines and formatting
     prompt = (
-prompt = (
-    """
-    Let's decode the way to respond to the queries for our health insurance data. The responses depend on the type of information requested in the query.
-
-    1. If the query requires information about reimbursements or out-of-pocket expenses, format your answer like this:
-       {"table": {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [[category1, expense1, reimbursement1, remaining1], [category2, expense2, reimbursement2, remaining2], ...]}}
-
-    2. For a bar chart showing the comparison of reimbursements, use this format:
-       {"bar": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
-
-    3. If a line chart is needed to visualize the trend of reimbursements over time or for different categories, your reply should look like this:
-       {"line": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
-
-    Note: We only accommodate two types of charts: "bar" and "line".
-
-    4. For a plain question that doesn't need a chart or table, your response should be straightforward:
-       {"answer": "The answer to your question is here"}
-
-    For example:
-       {"answer": "The maximum reimbursement for a hospital stay is €650"}
-
-    5. If the answer is not known or available, respond with:
-       {"answer": "I do not have that information."}
-
-    Return all output as a string. Remember to encase all strings in the "columns" list and data list in double quotes.
-    For example: {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [["Hospitalisation", "Daily hospital fee", "€20.00", "€0.00"], ["Hospitalisation", "Private room per night", "€70.00", "€0.00"]]}
+        """
+        Let's decode the way to respond to the queries for our health insurance data. The responses depend on the type of information requested in the query.
     
-    Now, let's address the specific query you have regarding our health insurance product offerings. Here's the query for you to work on: 
-    """
+        1. If the query requires information about reimbursements or out-of-pocket expenses, format your answer like this:
+           {"table": {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [[category1, expense1, reimbursement1, remaining1], [category2, expense2, reimbursement2, remaining2], ...]}}
+    
+        2. For a bar chart showing the comparison of reimbursements, use this format:
+           {"bar": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
+    
+        3. If a line chart is needed to visualize the trend of reimbursements over time or for different categories, your reply should look like this:
+           {"line": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
+    
+        Note: We only accommodate two types of charts: "bar" and "line".
+    
+        4. For a plain question that doesn't need a chart or table, your response should be straightforward:
+           {"answer": "The answer to your question is here"}
+    
+        For example:
+           {"answer": "The maximum reimbursement for a hospital stay is €650"}
+    
+        5. If the answer is not known or available, respond with:
+           {"answer": "I do not have that information."}
+    
+        Return all output as a string. Remember to encase all strings in the "columns" list and data list in double quotes.
+        For example: {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [["Hospitalisation", "Daily hospital fee", "€20.00", "€0.00"], ["Hospitalisation", "Private room per night", "€70.00", "€0.00"]]}
+        
+        Now, let's address the specific query you have regarding our health insurance product offerings. Here's the query for you to work on: 
+        """
         + query
     )
 
