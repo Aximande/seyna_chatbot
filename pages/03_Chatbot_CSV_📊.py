@@ -50,41 +50,35 @@ def ask_agent(agent, query):
     """
     # Prepare the prompt with query guidelines and formatting
     prompt = (
-        """
-        Let's decode the way to respond to the queries. The responses depend on the type of information requested in the query. 
+prompt = (
+    """
+    Let's decode the way to respond to the queries for our health insurance data. The responses depend on the type of information requested in the query.
 
-        1. If the query requires a table, format your answer like this:
-           {"table": {"columns": ["column1", "column2", ...], "data": [[value1, value2, ...], [value1, value2, ...], ...]}}
+    1. If the query requires information about reimbursements or out-of-pocket expenses, format your answer like this:
+       {"table": {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [[category1, expense1, reimbursement1, remaining1], [category2, expense2, reimbursement2, remaining2], ...]}}
 
-        2. For a bar chart, respond like this:
-           {"bar": {"columns": ["A", "B", "C", ...], "data": [25, 24, 10, ...]}}
+    2. For a bar chart showing the comparison of reimbursements, use this format:
+       {"bar": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
 
-        3. If a line chart is more appropriate, your reply should look like this:
-           {"line": {"columns": ["A", "B", "C", ...], "data": [25, 24, 10, ...]}}
+    3. If a line chart is needed to visualize the trend of reimbursements over time or for different categories, your reply should look like this:
+       {"line": {"columns": ["Type of Expense", "Reimbursement", "Amount Remaining"], "data": [reimbursement1, remaining1, reimbursement2, remaining2, ...]}}
 
-        Note: We only accommodate two types of charts: "bar" and "line".
+    Note: We only accommodate two types of charts: "bar" and "line".
 
-        4. For a plain question that doesn't need a chart or table, your response should be:
-           {"answer": "Your answer goes here"}
+    4. For a plain question that doesn't need a chart or table, your response should be straightforward:
+       {"answer": "The answer to your question is here"}
 
-        For example:
-           {"answer": "The Product with the highest Orders is '15143Exfo'"}
+    For example:
+       {"answer": "The maximum reimbursement for a hospital stay is €650"}
 
-        5. If the answer is not known or available, respond with:
-           {"answer": "I do not know."}
+    5. If the answer is not known or available, respond with:
+       {"answer": "I do not have that information."}
 
-        Return all output as a string. Remember to encase all strings in the "columns" list and data list in double quotes. 
-        For example: {"columns": ["Products", "Orders"], "data": [["51993Masc", 191], ["49631Foun", 152]]}
-
-        REMENBER BE EXTREMEMLY CAREFUL WITH THE FORMATTING. ANY MISTAKE WILL CAUSE THE MODEL TO FAIL.
-        if you don't use double quotes, the model will fail. Be extremaly careful with the formatting.
-
-        Also remenber the tool is python_repl_ast, do not add backticks or any other character to the response.
-
-        You're a 10x data analysts, you help me make an analysis of the dataset provided.
-
-        Now, let's tackle the query step by step. Here's the query for you to work on: 
-        """
+    Return all output as a string. Remember to encase all strings in the "columns" list and data list in double quotes.
+    For example: {"columns": ["Category", "Type of Expense", "Reimbursement", "Amount Remaining"], "data": [["Hospitalisation", "Daily hospital fee", "€20.00", "€0.00"], ["Hospitalisation", "Private room per night", "€70.00", "€0.00"]]}
+    
+    Now, let's address the specific query you have regarding our health insurance product offerings. Here's the query for you to work on: 
+    """
         + query
     )
 
