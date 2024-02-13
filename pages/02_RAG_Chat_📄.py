@@ -52,6 +52,8 @@ def rag_tool_openai(filenames: list[str]):
     for f in filenames:
         loader = PyPDFLoader(f)
         texts = text_splitter.split_documents(loader.load())
+        print(texts)
+        return
 
     embeddings = OpenAIEmbeddings(openai_api_key=api_key)
     db = FAISS.from_documents(texts, embeddings)
