@@ -121,7 +121,21 @@ st.markdown(
 st.title("Assistant FAQ Assurantielle : interrogez vos datas")
 st.markdown("""
 **Bienvenue sur Assistant FAQ Assurantielle**, votre source d'informations fiable pour naviguer dans le monde complexe des assurances santé individuelles. Grâce à une combinaison unique de données de marché et d'une base de connaissances sur-mesure développée par Seyna, notre outil offre des réponses précises à vos questions les plus pressantes.
+
+Pour le moment, voici les documents que nous avons dans notre base de connaissance :
+
+- **Assurance maladie** : ce qui reste à votre charge - Lafinancepour tous - 13 Novembre 2023
+- **Accident de ski** : êtes-vous bien assuré ?- Lafinancepour tous - 26 Janvier 2022
+- **Souscrire une complémentaire santé individuelle, hors entreprise** - Lafinancepour tous - 8 février 2022
+- **Souscrire une complémentaire santé d'entreprise** - Lafinancepour tous - 6 Mai 2022
+- **Qu'est-ce que la santé prévoyance ?** - Lafinancepour tous - 29 Novembre 2022
+- **L'assurance voyage** - Lafinancepour tous - 21 juin 2022
+- **Data Marché Assurance Santé**
+- **Comprendre son contrat de complémentaire santé** - Lafinancepour tous - 19 oct 2021
+- **Assurance maladie : le tiers payant** - Lafinancepour tous - 13 Novembre 2023
+- **Assurance maladie : le remboursement des soins et des médicaments** - Lafinancepour tous - 13 Novembre 2023
 """)
+
 
 # st.write("Please upload your PDF file below.")
 
