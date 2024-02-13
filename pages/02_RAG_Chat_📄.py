@@ -48,13 +48,12 @@ def prepare_file(uploaded_file):
 def rag_tool_openai(filenames: list[str]):
 
     texts = []
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
+    txt_split = CharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
     for f in filenames:
         loader = PyPDFLoader(f)
-        texts = text_splitter.split_documents(loader.load())
-        print(texts)
-        return
+        texts = texts + txt_split.split_documents(loader.load())
 
+    print(texts)
     embeddings = OpenAIEmbeddings(openai_api_key=api_key)
     db = FAISS.from_documents(texts, embeddings)
     retriever = db.as_retriever()
