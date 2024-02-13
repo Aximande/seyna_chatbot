@@ -103,9 +103,6 @@ if "messages2" not in st.session_state:
     st.session_state.messages2 = []
 
 st.set_page_config(page_title="Assistant FAQ Assurantielle")
-st.markdown("""
-**Bienvenue sur Assistant FAQ Assurantielle**, votre source d'informations fiable pour naviguer dans le monde complexe des assurances santé individuelles. Grâce à une combinaison unique de données de marché et d'une base de connaissances sur-mesure développée par Seyna, notre outil offre des réponses précises à vos questions les plus pressantes.
-""")
 
 
 st.markdown(
@@ -121,7 +118,10 @@ st.markdown(
 )
 
 
-st.title("Assistant FAQ Assurantielle - R.A.G sur base de connaissances PDFs externe")
+st.title("Assistant FAQ Assurantielle : interrogez vos datas")
+st.markdown("""
+**Bienvenue sur Assistant FAQ Assurantielle**, votre source d'informations fiable pour naviguer dans le monde complexe des assurances santé individuelles. Grâce à une combinaison unique de données de marché et d'une base de connaissances sur-mesure développée par Seyna, notre outil offre des réponses précises à vos questions les plus pressantes.
+""")
 
 # st.write("Please upload your PDF file below.")
 

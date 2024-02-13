@@ -15,9 +15,9 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Streamlit page configuration
 st.set_page_config(page_title="Comparateur de Garanties: Analyse Interactive sur multiples CSVs", layout='wide')
-st.title("Comparateur de Garanties: Analyse Interactive sur multiples CSVs")
+st.title("Comparateur de Garanties Santé 📊")
 st.markdown("""
-**Bienvenue sur notre Comparateur de Garanties**, votre outil privilégié pour l'analyse interactive des tableaux de garanties. Utilisant des modèles de langage avancés et des dataframe intelligents, le Comparateur de Garanties vous permet de comparer les tableaux de garanties et fournit des aperçus détaillés des remboursements pour différents actes médicaux. Que vous analysiez des contrats ou recherchiez des données spécifiques de remboursement pour le profil d'un prospect, notre outil simplifie le processus, offrant des informations précises et exploitables à travers cinq types d'actes. Téléchargez vos contrats et commencez à explorer le paysage financier des garanties de santé dès aujourd'hui.
+**Bienvenue sur notre Comparateur de Garanties **, votre outil privilégié pour l'analyse interactive de vos tableaux de garanties au format CSV. Le Comparateur vous permet notamment de comparer deux tableaux de remboursement pur un produit d'assurance Santé et fournit des aperçus détaillés des remboursements pour différents actes médicaux
 """)
 
 
