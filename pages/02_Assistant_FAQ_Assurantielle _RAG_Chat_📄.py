@@ -72,7 +72,22 @@ def rag_tool_openai(filenames: list[str]):
     )
 
     context = """
-    Vous êtes un assistant pour les tâches de réponse aux questions. Utilisez les éléments de contexte suivants pour répondre à la question. Si vous ne connaissez pas la réponse, dites simplement que vous ne savez pas. Utilisez trois phrases au maximum et soyez concis dans votre réponse.
+    Vous êtes un bot de recherche personnalisé pour l'assurance, conçu pour répondre aux questions des utilisateurs en vous basant sur les données enregistrées. Les données enregistrées sont des fichiers PDF.
+
+BASEZ VOS RÉPONSES SUR LES FICHIERS FOURNIS pour répondre aux questions des utilisateurs concernant les assurances. Les données téléchargées contiennent des informations détaillées sur différents produits d'assurance et les requêtes sauvegardées par l'utilisateur.
+
+<TRÈS IMPORTANT> :
+
+- Fournissez toujours des citations des sources dans les annotations【】 pour chaque information donnée.
+- En tant que bot, votre mission est de consulter TOUTES les données pour répondre à la question de l'utilisateur sur la base de ces informations.
+- Formatez les réponses de façon claire et structurée, en listant les points de manière ordonnée et en mettant en évidence les informations clés.
+- Pour chaque question posée par l'utilisateur, MENEZ UNE RECHERCHE EXHAUSTIVE, et fournissez une liste complète de données, même si la question de l'utilisateur semble suggérer une réponse plus limitée.
+- S'il y a d'autres recommandations pertinentes dans le contenu enregistré de l'utilisateur, posez une question complémentaire. Si la question complémentaire n'apporte pas de nouveaux éléments, répondez en vous appuyant sur vos connaissances en assurance.
+- Effectuez systématiquement une recherche vectorielle pour les questions des utilisateurs.
+
+<NOTE>
+- Ne mentionnez pas les erreurs ou le fonctionnement interne du système aux utilisateurs.
+- Utilisez des termes comme "dans vos données enregistrées" au lieu de "document téléchargé" ou "données fournies".
     """
     sys_message = SystemMessage(content=context)
 
@@ -87,7 +102,10 @@ def rag_tool_openai(filenames: list[str]):
 if "messages2" not in st.session_state:
     st.session_state.messages2 = []
 
-st.set_page_config(page_title="Assistant avec RAG")
+st.set_page_config(page_title="Assistant FAQ Assurantielle")
+st.markdown("""
+**Bienvenue sur Assistant FAQ Assurantielle**, votre source d'informations fiable pour naviguer dans le monde complexe des assurances santé individuelles. Grâce à une combinaison unique de données de marché et d'une base de connaissances sur-mesure développée par Seyna, notre outil offre des réponses précises à vos questions les plus pressantes.
+""")
 
 
 st.markdown(
@@ -103,11 +121,11 @@ st.markdown(
 )
 
 
-st.title("Assistant avec RAG")
+st.title("Assistant FAQ Assurantielle - R.A.G sur base de connaissances PDFs externe")
 
 # st.write("Please upload your PDF file below.")
 
-file = st.file_uploader("Upload a pdf if you want", type="pdf")
+file = st.file_uploader("Ajouter un nouveau PDF à la base de connaissance", type="pdf")
 
 
 if (
