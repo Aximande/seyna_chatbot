@@ -17,7 +17,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 st.set_page_config(page_title="Comparateur de Garanties: Analyse Interactive sur multiples CSVs", layout='wide')
 st.title("Comparateur de Garanties Santé 📊")
 st.markdown("""
-**Bienvenue sur notre Comparateur de Garanties **, votre outil privilégié pour l'analyse interactive de vos tableaux de garanties au format CSV. Le Comparateur vous permet notamment de comparer deux tableaux de remboursement pur un produit d'assurance Santé et fournit des aperçus détaillés des remboursements pour différents actes médicaux
+**Bienvenue sur notre Comparateur de Garanties**, votre outil privilégié pour l'analyse interactive de vos tableaux de garanties au format CSV. Le Comparateur vous permet notamment de comparer deux tableaux de remboursement pur un produit d'assurance Santé et fournit des aperçus détaillés des remboursements pour différents actes médicaux
 """)
 
 
