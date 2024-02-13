@@ -1,19 +1,7 @@
-from langchain.llms import LlamaCpp
-from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
-from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
-from langchain.agents.agent_types import AgentType
 import pandas as pd
-from dotenv import load_dotenv
-import json
 import streamlit as st
-import os
 
-from langchain.callbacks.manager import CallbackManager
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-
-from langchain.callbacks.base import BaseCallbackHandler, BaseCallbackManager
-from langchain.schema import LLMResult
 from pandasai import SmartDatalake
 
 
@@ -50,4 +38,3 @@ if data0 and data1:
 
         # Decode the response.
         st.write(response)
-        # print(response)
