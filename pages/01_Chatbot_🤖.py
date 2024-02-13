@@ -13,7 +13,6 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.chat_models import ChatOpenAI
-from langchain_mistralai.chat_models import ChatMistralAI
 from langchain_community.document_loaders import PyPDFLoader, CSVLoader
 
 from langchain.chains import LLMChain
@@ -61,14 +60,12 @@ def prepare_file(uploaded_file):
 
 def agent_without_rag(template):
     # LLM
-    if st.session_state.model == "OpenAI":
-        llm = ChatOpenAI(
-            temperature=0,
-            model="gpt-4-1106-preview",
-            openai_api_key=api_key,
-        )
-    else:
-        llm = ChatMistralAI()
+
+    llm = ChatOpenAI(
+        temperature=0,
+        model="gpt-4-1106-preview",
+        openai_api_key=api_key,
+    )
 
     # Prompt
     prompt = ChatPromptTemplate(
@@ -102,14 +99,11 @@ def agent_rag(loader, template, doc_type="PDF"):
     )
     tools = [tool]
 
-    if st.session_state.model == "OpenAI":
-        llm = ChatOpenAI(
-            temperature=0,
-            model="gpt-4-1106-preview",
-            openai_api_key=api_key,
-        )
-    else:
-        llm = ChatMistralAI()
+    llm = ChatOpenAI(
+        temperature=0,
+        model="gpt-4-1106-preview",
+        openai_api_key=api_key,
+    )
 
     context = (
         template
@@ -150,7 +144,6 @@ def update_agent(file):
             st.session_state.previous_agent["category"] != st.session_state.categorie
             or st.session_state.previous_agent["job"] != st.session_state.tache
             or st.session_state.previous_agent["document"] != st.session_state.document
-            or st.session_state.previous_agent["model"] != st.session_state.model
         )
 
     def file_changed():
@@ -163,14 +156,10 @@ def update_agent(file):
         st.session_state.previous_agent["category"] = st.session_state.categorie
         st.session_state.previous_agent["job"] = st.session_state.tache
         st.session_state.previous_agent["document"] = st.session_state.document
-        st.session_state.previous_agent["model"] = st.session_state.model
         st.session_state.file = file
 
         with st.spinner("Preparing agent..."):
-            if (
-                st.session_state.document == "PDF"
-                and st.session_state.model == "OpenAI"
-            ):
+            if st.session_state.document == "PDF":
                 if file is None:
                     st.session_state.agent = None
                 else:
@@ -181,10 +170,7 @@ def update_agent(file):
                         templates[st.session_state.categorie][st.session_state.tache],
                         "PDF",
                     )
-            elif (
-                st.session_state.document == "CSV"
-                and st.session_state.model == "OpenAI"
-            ):
+            elif st.session_state.document == "CSV":
                 if file is None:
                     st.session_state.agent = None
                 else:
@@ -208,7 +194,6 @@ if "messages" not in st.session_state:
         "category": "Gestion de sinistre",
         "job": "Sinistre 1",
         "document": "Aucun",
-        "model": "OpenAI",
     }
 
 st.set_page_config(page_title="Assistant chatbot")
@@ -221,17 +206,6 @@ st.image(
     width=300,
 )
 st.title("Chatbot 🤖")
-
-# we add a toggle button to choose the ai model between openai and mistralai
-st.sidebar.title("Choisissez votre modèle")
-model = st.sidebar.radio(
-    "Choisissez votre modèle :",
-    (
-        "OpenAI",
-        "MistralAI",
-    ),
-    key="model",
-)
 
 st.radio(
     "Choisissez votre categorie :",
@@ -250,22 +224,19 @@ st.radio(
     key="tache",
 )
 
-if st.session_state.model == "OpenAI":
-    st.radio(
-        "Document ?",
-        ("Aucun", "PDF", "CSV"),
-        key="document",
-    )
+st.radio(
+    "Document ?",
+    ("Aucun", "PDF", "CSV"),
+    key="document",
+)
 
-    if st.session_state.document == "PDF":
-        file = st.file_uploader("Selectionnez le pdf", type="pdf")
-    elif st.session_state.document == "CSV":
-        file = st.file_uploader("Selectionnez le csv", type="csv")
-    else:
-        file = None
+if st.session_state.document == "PDF":
+    file = st.file_uploader("Selectionnez le pdf", type="pdf")
+elif st.session_state.document == "CSV":
+    file = st.file_uploader("Selectionnez le csv", type="csv")
 else:
-    st.session_state.document = "Aucun"
     file = None
+
 
 update_agent(file)
 
