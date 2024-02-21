@@ -29,6 +29,9 @@ import tempfile
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
+# The very first Streamlit command
+st.set_page_config(page_title="Assistant chatbot", layout="wide")
+st.title("Assisstants Seyna 🤖")
 # Assuming style.css is in the same directory as your script
 css_file_path = os.path.join(os.path.dirname(__file__), "style.css")
 
@@ -200,7 +203,6 @@ if "messages" not in st.session_state:
         "document": "Aucun",
     }
 
-st.set_page_config(page_title="Assistant chatbot")
 
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -252,7 +254,6 @@ if "messages" not in st.session_state:
     }
 
 # Set up your Streamlit widgets here
-st.set_page_config(page_title="Assistant chatbot")
 st.title("Chatbot 🤖")
 
 # Choose your category
