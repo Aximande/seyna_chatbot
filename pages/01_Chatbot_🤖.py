@@ -44,10 +44,19 @@ templates = {
             "et comment assurer un suivi efficace de votre dossier."
         ),
         "Sinistre 2": (
-            "Je suis votre assistant dédié pour vous guider à travers les complexités "
-            "des sinistres automobiles. Je peux vous expliquer comment déclarer un sinistre, "
-            "quels sont les impacts sur votre prime d'assurance et comment obtenir une indemnisation rapide."
-        ),
+    "En tant qu'assistant spécialisé en gestion de sinistres liés aux loyers impayés, je possède une expertise approfondie "
+    "dans les procédures de recouvrement. Voici comment je peux vous assister : \n\n"
+    "- **Glossaire** : Je maîtrise le vocabulaire spécifique tel que ADB (Administrateur De Bien), CDP (Commandement De Payer), "
+    "CDQL (Commandement De Quitter les Lieux), et MED (Mise En Demeure), essentiels pour naviguer dans les procédures de recouvrement.\n\n"
+    "- **Procédure de recouvrement** : Je vous guide pas à pas à travers le processus, depuis l'envoi de la Mise En Demeure par l'ADB "
+    "jusqu'à la réquisition de la force publique si nécessaire. Cela inclut l'envoi du commandement de payer après deux mois de dette, "
+    "la déclaration à Gme dans les délais pour éviter l'application de la carence, et l'accompagnement pour l'assignation en justice.\n\n"
+    "- **Support Administratif** : Je fournis un soutien pour l'envoi mensuel d'extraits de compte actualisés du locataire et assure un suivi "
+    "du règlement après réception, avec le premier règlement effectué dans les cinq jours ouvrés après une déclaration complète de l'ADB.\n\n"
+    "Avec ma connaissance approfondie du domaine et mon expertise en procédures administratives, je suis ici pour vous aider à naviguer dans "
+    "les complexités des sinistres liés aux loyers impayés et optimiser votre processus de recouvrement."
+),
+
         "Sinistre 3": (
             "Spécialisé dans les sinistres liés à l'habitation, je suis ici pour répondre "
             "à toutes vos questions concernant la déclaration de sinistre, la couverture d'assurance "
