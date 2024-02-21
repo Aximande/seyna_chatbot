@@ -172,25 +172,29 @@ def update_agent(file, categorie, tache):
     file_path = prepare_file(file)
     template = None
 
-    if categorie == "Gestion de sinistre":
-        if tache in sinistre_templates:
-            template = sinistre_templates[tache][0]  # Selecting the first template for example
-        else:
-            st.error("Tâche non prise en charge. Veuillez sélectionner une tâche valide.")
-            return None
-    elif categorie == "Assistant sales":
-        if tache in sales_templates:
-            template = sales_templates[tache][0]
-        else:
-            st.error("Tâche non prise en charge. Veuillez sélectionner une tâche valide.")
-            return None
+    # Check if the selected category and task are valid
+    if categorie not in jobs or tache not in jobs[categorie]:
+        st.error("Catégorie ou tâche non valide. Veuillez sélectionner une catégorie et une tâche valides.")
+        return None
+
+    # Retrieve the template based on the selected category and task
+    if categorie in sinistre_templates and tache in sinistre_templates[categorie]:
+        template = sinistre_templates[categorie][tache][0]  # Selecting the first template for example
+    elif categorie in sales_templates and tache in sales_templates[categorie]:
+        template = sales_templates[categorie][tache][0]
+    else:
+        st.error("Aucun modèle trouvé pour cette tâche. Veuillez sélectionner une tâche valide.")
+        return None
 
     if not template:
         template = "Un template par défaut pour les cas non traités"  # Add a default template if necessary
 
+    # Determine the appropriate loader based on the file format
     loader = None
-    if file and categorie == "Gestion de sinistre" and tache == "Sinistre 1":
-        if file.name.endswith('.pdf'):
+    if file and file_path:
+        if categorie == "Gestion de sinistre" and tache == "Sinistre 1":
+            loader = PyPDFLoader(file_path)
+        elif file.name.endswith('.pdf'):
             loader = PyPDFLoader(file_path)
         elif file.name.endswith('.csv'):
             loader = CSVLoader(file_path)
@@ -203,8 +207,6 @@ def update_agent(file, categorie, tache):
         return agent_rag(loader, template)
     else:
         return None
-
-
 # Streamlit app interface nd integrate helper functions above
 
 # Initialize chat history
