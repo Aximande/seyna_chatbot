@@ -173,9 +173,17 @@ def update_agent(file, categorie, tache):
     template = None
 
     if categorie == "Gestion de sinistre":
-        template = sinistre_templates[tache][0]  # Selecting the first template for example
+        if tache in sinistre_templates:
+            template = sinistre_templates[tache][0]  # Selecting the first template for example
+        else:
+            st.error("Tâche non prise en charge. Veuillez sélectionner une tâche valide.")
+            return None
     elif categorie == "Assistant sales":
-        template = sales_templates[tache][0]
+        if tache in sales_templates:
+            template = sales_templates[tache][0]
+        else:
+            st.error("Tâche non prise en charge. Veuillez sélectionner une tâche valide.")
+            return None
 
     if not template:
         template = "Un template par défaut pour les cas non traités"  # Add a default template if necessary
@@ -195,7 +203,6 @@ def update_agent(file, categorie, tache):
         return agent_rag(loader, template)
     else:
         return None
-
 
 
 # Streamlit app interface nd integrate helper functions above
