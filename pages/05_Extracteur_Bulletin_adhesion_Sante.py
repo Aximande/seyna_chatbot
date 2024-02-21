@@ -103,9 +103,16 @@ if file:
     agent = create_extraction_agent(file_path)
     display_extraction_results(agent, extraction_query)
 
-    # Ajout d'un champ de saisie pour permettre à l'utilisateur de poser une question supplémentaire
-    user_question = st.text_input("Posez une question supplémentaire concernant le bulletin d'adhésion :")
-    if user_question:
-        # L'agent traite la question supplémentaire posée par l'utilisateur
-        response = agent.invoke({"input": user_question})
-        st.write(response["text"] if "text" in response else response["output"])
+    # Mise en forme améliorée pour la section Q&A
+    st.markdown("## Posez une question supplémentaire concernant le bulletin d'adhésion")
+    with st.container():  # Utilisez un conteneur pour la mise en page
+        col1, col2 = st.columns([1, 4])  # Créez deux colonnes, la première plus étroite que la seconde
+        with col1:
+            st.write("Q:")  # 'Q:' dans la colonne plus étroite
+        with col2:
+            user_question = st.text_input("", key="user_question")  # Champ de saisie pour la question
+            if user_question:
+                response = agent.invoke({"input": user_question})
+                st.session_state["user_response"] = response["text"] if "text" in response else ""
+                st.markdown("### Réponse :")
+                st.write(st.session_state["user_response"])  # Affichez la réponse de l'agent
