@@ -205,30 +205,6 @@ st.image(
     Image.open("static/logo_seyna_150_orange.png"),
     width=300,
 )
-st.title("Chatbot 🤖")
-
-st.radio(
-    "Choisissez votre categorie :",
-    (
-        "Gestion de sinistre",
-        "Assistant sales",
-    ),
-    key="categorie",
-)
-
-# we create a placeholder list to store the jobs in the category
-
-st.radio(
-    "Choisissez votre tache :",
-    jobs[st.session_state.categorie],
-    key="tache",
-)
-
-st.radio(
-    "Document ?",
-    ("Aucun", "PDF", "CSV"),
-    key="document",
-)
 
 if st.session_state.document == "PDF":
     file = st.file_uploader("Selectionnez le pdf", type="pdf")
