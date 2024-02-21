@@ -41,24 +41,6 @@ if 'document' not in st.session_state:
 
 st.title("Assisstants Seyna 🤖")
 
-# Choose your category
-categorie = st.radio("Choisissez votre categorie :", ("Gestion de sinistre", "Assistant sales"))
-
-# Choose your job based on the category
-tache = st.radio("Choisissez votre tache :", jobs[categorie])
-
-# Choose the type of document
-document_type = st.radio("Document ?", ("Aucun", "PDF", "CSV"))
-
-
-# Now you can safely check st.session_state.document
-if st.session_state.document == "PDF":
-    file = st.file_uploader("Selectionnez le pdf", type="pdf")
-elif st.session_state.document == "CSV":
-    file = st.file_uploader("Selectionnez le csv", type="csv")
-else:
-    file = None
-
 jobs = {
     "Gestion de sinistre": ["Sinistre 1", "Sinistre 2", "Sinistre 3"],
     "Assistant sales": ["Assistant 1", "Assistant 2", "Assistant 3"],
@@ -102,6 +84,23 @@ sales_templates = {
     ]
 }
 
+# Choose your category
+categorie = st.radio("Choisissez votre categorie :", ("Gestion de sinistre", "Assistant sales"))
+
+# Choose your job based on the category
+tache = st.radio("Choisissez votre tache :", jobs[categorie])
+
+# Choose the type of document
+document_type = st.radio("Document ?", ("Aucun", "PDF", "CSV"))
+
+
+# Now you can safely check st.session_state.document
+if st.session_state.document == "PDF":
+    file = st.file_uploader("Selectionnez le pdf", type="pdf")
+elif st.session_state.document == "CSV":
+    file = st.file_uploader("Selectionnez le csv", type="csv")
+else:
+    file = None
 
 def prepare_file(uploaded_file):
     path = None
