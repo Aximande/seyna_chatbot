@@ -29,19 +29,15 @@ import tempfile
 
 # Correctly setting the page configuration at the beginning of your script
 st.set_page_config(page_title="Assistant chatbot", layout="wide")
+
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
 st.title("Assisstants Seyna 🤖")
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-
-# Assuming style.css is located in the parent directory of the directory where this script is located
-css_file_path = "/Users/ladislas/Desktop/seyna-chatbot-2024/seyna_chatbot/style.css"
-
-if os.path.exists(css_file_path):
-    with open(css_file_path) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-else:
-    st.error("File 'style.css' not found.")
 
 jobs = {
     "Gestion de sinistre": ["Sinistre 1", "Sinistre 2", "Sinistre 3"],
@@ -204,10 +200,6 @@ if "messages" not in st.session_state:
         "job": "Sinistre 1",
         "document": "Aucun",
     }
-
-
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 st.image(
     Image.open("static/logo_seyna_150_orange.png"),
