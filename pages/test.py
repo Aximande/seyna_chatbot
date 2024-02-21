@@ -182,13 +182,20 @@ def update_agent(file, categorie, tache):
 
     loader = None
     if file and categorie == "Gestion de sinistre" and tache == "Sinistre 1":
-        loader = PyPDFLoader(file_path)
+        if file.name.endswith('.pdf'):
+            loader = PyPDFLoader(file_path)
+        elif file.name.endswith('.csv'):
+            loader = CSVLoader(file_path)
+        else:
+            st.error("Format de fichier non pris en charge. Veuillez télécharger un fichier PDF ou CSV.")
+
     # Add other loader conditions for different categories and tasks if needed
 
     if loader:
         return agent_rag(loader, template)
     else:
         return None
+
 
 
 # Streamlit app interface nd integrate helper functions above
