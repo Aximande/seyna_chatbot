@@ -26,13 +26,15 @@ from langchain.memory import ConversationBufferMemory
 
 import tempfile
 
+
+# Correctly setting the page configuration at the beginning of your script
+st.set_page_config(page_title="Assistant chatbot", layout="wide")
+st.title("Assisstants Seyna 🤖")
+
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
-# The very first Streamlit command
-st.set_page_config(page_title="Assistant chatbot", layout="wide")
-st.title("Assisstants Seyna 🤖")
-# Assuming style.css is in the same directory as your script
+# Assuming style.css is located in the parent directory of the directory where this script is located
 css_file_path = "/Users/ladislas/Desktop/seyna-chatbot-2024/seyna_chatbot/style.css"
 
 if os.path.exists(css_file_path):
@@ -40,6 +42,7 @@ if os.path.exists(css_file_path):
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 else:
     st.error("File 'style.css' not found.")
+
 jobs = {
     "Gestion de sinistre": ["Sinistre 1", "Sinistre 2", "Sinistre 3"],
     "Assistant sales": ["Assistant 1", "Assistant 2", "Assistant 3"],
