@@ -1,3 +1,5 @@
+# pip install streamlit langchain langchain-openai beautifulsoup4 python-dotenv chromadb
+
 import streamlit as st
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_community.document_loaders import WebBaseLoader
@@ -6,7 +8,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain.chains import create_history_aware_retriever, create_retrieval_chain, create_stuff_documents_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 
 load_dotenv()
 
@@ -16,7 +19,8 @@ def get_vectorstore_from_url(url):
     text_splitter = RecursiveCharacterTextSplitter()
     document_chunks = text_splitter.split_documents(document)
     vector_store = Chroma.from_documents(document_chunks, OpenAIEmbeddings())
-    return vector_store
+    return vector_store, document_chunks  # Return both the vector store and document chunks
+
 
 def get_context_retriever_chain(vector_store):
     llm = ChatOpenAI()
@@ -58,11 +62,11 @@ def generate_questions_from_content(document_chunks):
         questions.append(question)
     return questions
 
-# Streamlit page configuration
+# Configuration de la page Streamlit
 st.set_page_config(page_title="Discuter avec des sites web", page_icon="🤖")
 st.title("Discuter avec des sites web 🌐")
 
-# Sidebar
+# Barre latérale
 with st.sidebar:
     st.header("Paramètres")
     website_url = st.text_input("URL du site web", help="Entrez l'URL du site web avec lequel vous souhaitez interagir.")
@@ -74,12 +78,20 @@ else:
         st.session_state.chat_history = [
             AIMessage(content="Bonjour, je suis un bot. Comment puis-je vous aider ?")
         ]
+
+    # Check if vector_store does not exist in the session and then initialize it
     if "vector_store" not in st.session_state:
-        vector_store = get_vectorstore_from_url(website_url)
+        # Updated call to get_vectorstore_from_url to also receive document_chunks
+        vector_store, document_chunks = get_vectorstore_from_url(website_url)
         st.session_state.vector_store = vector_store
-        document_chunks = vector_store._documents  # Assuming this can access the document chunks; adjust based on actual implementation
+        # Generate questions from the content
         questions = generate_questions_from_content(document_chunks)
         st.session_state.questions = questions
+        # Optionally display the generated questions
+        if questions:
+            st.write("Questions Generated from the Website:")
+            for question in questions:
+                st.write(question)
 
     user_query = st.chat_input("Tapez votre message ici...")
     if user_query:
@@ -94,8 +106,3 @@ else:
         elif isinstance(message, HumanMessage):
             with st.chat_message("Humain"):
                 st.write(message.content)
-
-    if "questions" in st.session_state:
-        st.subheader("Questions d'intérêt générées")
-        for question in st.session_state.questions:
-            st.info(question)
