@@ -98,21 +98,23 @@ Signature de l'adhérent
 Date de signature
 """  # Votre question pré-définie ici
 
+import streamlit as st
+# ... (les autres parties de votre code restent les mêmes)
+
 if file:
     file_path = prepare_file(file)
     agent = create_extraction_agent(file_path)
     display_extraction_results(agent, extraction_query)
 
-    # Mise en forme améliorée pour la section Q&A
-    st.markdown("## Posez une question supplémentaire concernant le bulletin d'adhésion")
-    with st.container():  # Utilisez un conteneur pour la mise en page
-        col1, col2 = st.columns([1, 4])  # Créez deux colonnes, la première plus étroite que la seconde
-        with col1:
-            st.write("Q:")  # 'Q:' dans la colonne plus étroite
-        with col2:
-            user_question = st.text_input("", key="user_question")  # Champ de saisie pour la question
-            if user_question:
-                response = agent.invoke({"input": user_question})
-                st.session_state["user_response"] = response["text"] if "text" in response else ""
-                st.markdown("### Réponse :")
-                st.write(st.session_state["user_response"])  # Affichez la réponse de l'agent
+    # Ajouter un titre pour la partie Q&A pour la rendre plus visible
+    st.header("Questions supplémentaires sur le bulletin d'adhésion")
+    user_question = st.text_area("Posez une question supplémentaire concernant le bulletin d'adhésion :", height=150)
+    if user_question:
+        # L'agent traite la question supplémentaire posée par l'utilisateur
+        response = agent.invoke({"input": user_question})
+        # Stocker la réponse dans l'état de session
+        st.session_state["user_response"] = response["text"] if "text" in response else response["output"]
+        # Créer un espace dédié pour la réponse
+        st.subheader("Réponse de l'agent :")
+        # Afficher la réponse de l'agent dans un conteneur plus grand pour une meilleure visibilité
+        st.text_area("", value=st.session_state["user_response"], height=150, disabled=True)
