@@ -29,6 +29,15 @@ import tempfile
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
+# Assuming style.css is in the same directory as your script
+css_file_path = os.path.join(os.path.dirname(__file__), "style.css")
+
+if os.path.exists(css_file_path):
+    with open(css_file_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+else:
+    st.error("File 'style.css' not found.")
+
 jobs = {
     "Gestion de sinistre": ["Sinistre 1", "Sinistre 2", "Sinistre 3"],
     "Assistant sales": ["Assistant 1", "Assistant 2", "Assistant 3"],
