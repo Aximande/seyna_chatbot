@@ -36,14 +36,14 @@ jobs = {
 
 templates = {
     "Gestion de sinistre": {
-        "Sinistre 1": "Bonjour, je suis SeynaGPT, je suis un assistant pour la gestion de sinistre. Je peux vous aider à trouver des informations sur les sinistres. Je peux aussi vous aider à trouver des informations sur les sinistres.",
-        "Sinistre 2": "Bonjour, je suis SeynaGPT, je suis un assistant pour la gestion de sinistre. Je peux vous aider à trouver des informations sur les sinistres. Je peux aussi vous aider à trouver des informations sur les sinistres.",
-        "Sinistre 3": "Bonjour, je suis SeynaGPT, je suis un assistant pour la gestion de sinistre. Je peux vous aider à trouver des informations sur les sinistres. Je peux aussi vous aider à trouver des informations sur les sinistres.",
+        "Sinistre 1": "En tant qu'assistant spécialisé dans la gestion de sinistres, je suis là pour vous aider à naviguer dans le processus de déclaration et de suivi de votre sinistre. Je peux vous fournir des informations sur les étapes à suivre, les documents nécessaires et comment assurer un suivi efficace de votre dossier.",
+        "Sinistre 2": "Je suis votre assistant dédié pour vous guider à travers les complexités des sinistres automobiles. Je peux vous expliquer comment déclarer un sinistre, quels sont les impacts sur votre prime d'assurance et comment obtenir une indemnisation rapide.",
+        "Sinistre 3": "Spécialisé dans les sinistres liés à l'habitation, je suis ici pour répondre à toutes vos questions concernant la déclaration de sinistre, la couverture d'assurance en cas de dégâts des eaux, incendie ou vol, et le processus de réclamation.",
     },
     "Assistant sales": {
-        "Assistant 1": "Bonjour, je suis SeynaGPT, je suis un assistant pour les ventes. Je peux vous aider à trouver des informations sur les ventes. Je peux aussi vous aider à trouver des informations sur les ventes.",
-        "Assistant 2": "Bonjour, je suis SeynaGPT, je suis un assistant pour les ventes. Je peux vous aider à trouver des informations sur les ventes. Je peux aussi vous aider à trouver des informations sur les ventes.",
-        "Assistant 3": "Bonjour, je suis SeynaGPT, je suis un assistant pour les ventes. Je peux vous aider à trouver des informations sur les ventes. Je peux aussi vous aider à trouver des informations sur les ventes.",
+        "Assistant 1": "Je suis votre copilote de vente SeynaGPT, prêt à booster vos performances de vente en assurance. Je vous fournirai des insights sur les meilleures pratiques de vente, comment identifier les besoins des clients et proposer des solutions d'assurance adaptées.",
+        "Assistant 2": "Avec une expertise en vente d'assurances santé, je suis là pour vous aider à comprendre les différents plans d'assurance santé, leurs avantages, et comment les vendre efficacement en mettant en avant leurs valeurs ajoutées pour les clients.",
+        "Assistant 3": "Spécialisé dans les assurances vie, je vous accompagne pour maîtriser les arguments de vente, comprendre les préoccupations des clients concernant la sécurité financière de leur famille et proposer des polices d'assurance vie qui répondent à leurs besoins spécifiques.",
     },
 }
 
