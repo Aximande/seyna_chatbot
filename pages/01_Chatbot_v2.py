@@ -26,18 +26,38 @@ from langchain.memory import ConversationBufferMemory
 
 import tempfile
 
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Correctly setting the page configuration at the beginning of your script
-st.set_page_config(page_title="Assistant chatbot", layout="wide")
+st.set_page_config(page_title="Assistant chatbot")
 
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+if 'document' not in st.session_state:
+    st.session_state.document = 'Aucun'
+
 
 st.title("Assisstants Seyna 🤖")
 
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+# Choose your category
+categorie = st.radio("Choisissez votre categorie :", ("Gestion de sinistre", "Assistant sales"))
+
+# Choose your job based on the category
+tache = st.radio("Choisissez votre tache :", jobs[categorie])
+
+# Choose the type of document
+document_type = st.radio("Document ?", ("Aucun", "PDF", "CSV"))
+
+
+# Now you can safely check st.session_state.document
+if st.session_state.document == "PDF":
+    file = st.file_uploader("Selectionnez le pdf", type="pdf")
+elif st.session_state.document == "CSV":
+    file = st.file_uploader("Selectionnez le csv", type="csv")
+else:
+    file = None
 
 jobs = {
     "Gestion de sinistre": ["Sinistre 1", "Sinistre 2", "Sinistre 3"],
@@ -223,17 +243,6 @@ if "messages" not in st.session_state:
         "document": None
     }
 
-# Set up your Streamlit widgets here
-st.title("Chatbot 🤖")
-
-# Choose your category
-categorie = st.radio("Choisissez votre categorie :", ("Gestion de sinistre", "Assistant sales"))
-
-# Choose your job based on the category
-tache = st.radio("Choisissez votre tache :", jobs[categorie])
-
-# Choose the type of document
-document_type = st.radio("Document ?", ("Aucun", "PDF", "CSV"))
 
 # File uploader for PDF
 if document_type == "PDF":
@@ -278,6 +287,7 @@ if "messages" in st.session_state:
 
 # Handle user input for questions and display the agent's response
 response = ""
+
 if "agent" in st.session_state and st.session_state.agent is not None:
     user_input = st.text_input("Posez votre question ici :")
     if user_input:
