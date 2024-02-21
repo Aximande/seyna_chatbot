@@ -49,6 +49,11 @@ def display_extraction_results(agent, extraction_query):
 st.set_page_config(page_title="Assistant d'Extraction d'infos sur le Bulletin d'Adhésion (santé)")
 st.title("Extractor Bulletin Adhésion")
 
+st.markdown("""
+**Bienvenue sur notre bot extracteur d'infos de bulletin d'adhésion**, votre outil privilégié pour extraire des informations clés des bulletins d'adhésion aux assurances santé.
+""")
+
+
 file = st.file_uploader("Téléchargez le bulletin d'adhésion (PDF)", type="pdf")
 
 extraction_query = """
@@ -97,3 +102,10 @@ if file:
     file_path = prepare_file(file)
     agent = create_extraction_agent(file_path)
     display_extraction_results(agent, extraction_query)
+
+    # Ajout d'un champ de saisie pour permettre à l'utilisateur de poser une question supplémentaire
+    user_question = st.text_input("Posez une question supplémentaire concernant le bulletin d'adhésion :")
+    if user_question:
+        # L'agent traite la question supplémentaire posée par l'utilisateur
+        response = agent.invoke({"input": user_question})
+        st.write(response["text"] if "text" in response else response["output"])
