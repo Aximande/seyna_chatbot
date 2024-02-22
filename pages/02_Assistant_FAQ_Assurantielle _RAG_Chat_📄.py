@@ -21,6 +21,8 @@ from langchain.embeddings import OpenAIEmbeddings
 
 import tempfile
 
+st.set_page_config(page_title="Assistant FAQ Assurantielle")
+
 st.image(
     Image.open("static/logo_seyna_150_orange.png"),
     width=300,
@@ -107,7 +109,6 @@ BASEZ VOS RÉPONSES SUR LES FICHIERS FOURNIS pour répondre aux questions des ut
 if "messages2" not in st.session_state:
     st.session_state.messages2 = []
 
-st.set_page_config(page_title="Assistant FAQ Assurantielle")
 
 
 st.markdown(
