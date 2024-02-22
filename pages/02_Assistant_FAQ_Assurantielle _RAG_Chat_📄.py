@@ -21,6 +21,11 @@ from langchain.embeddings import OpenAIEmbeddings
 
 import tempfile
 
+st.image(
+    Image.open("static/logo_seyna_150_orange.png"),
+    width=300,
+)
+
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
