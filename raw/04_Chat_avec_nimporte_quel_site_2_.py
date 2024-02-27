@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain_openai import OpenAI
 
 load_dotenv()
 
@@ -55,10 +56,11 @@ def get_response(user_input):
 def generate_questions_from_content(document_chunks):
     """Generate questions from the website content."""
     questions = []
-    llm = ChatOpenAI()
+    llm = OpenAI()
+    #print(llm("Hello, world!"))
     for chunk in document_chunks[:3]:  # Limit to first 3 chunks for demonstration
         prompt = f"Given the following text, generate a relevant question:\n\n{chunk}"
-        question = llm.ask(prompt, stop=["\n"], temperature=0.5).get("text").strip()
+        question = llm(prompt)
         questions.append(question)
     return questions
 
