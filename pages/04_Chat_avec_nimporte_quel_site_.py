@@ -67,6 +67,9 @@ def generate_questions_from_content(document_chunks):
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Discuter avec des sites web", page_icon="🤖")
 st.title("Discuter avec des sites web 🌐")
+st.markdown("""
+**Bienvenue sur notre assistant search connecté au web**, votre outil privilégié pour intergair avec des sites : les blogs de vos concurrents, ou encore des sites officielles comme Améli...
+""")
 
 # Barre latérale
 with st.sidebar:
@@ -78,7 +81,7 @@ if not website_url:
 else:
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
-            AIMessage(content="Bonjour, je suis un bot. Comment puis-je vous aider ?")
+            AIMessage(content="Bonjour, je suis le bot Search Assistant de Seyna AI. Comment puis-je vous aider ?")
         ]
 
     # Check if vector_store does not exist in the session and then initialize it
