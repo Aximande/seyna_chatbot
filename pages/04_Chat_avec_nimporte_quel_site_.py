@@ -59,7 +59,7 @@ def generate_questions_from_content(document_chunks):
     llm = OpenAI()
     #print(llm("Hello, world!"))
     for chunk in document_chunks[:3]:  # Limit to first 3 chunks for demonstration
-        prompt = f"Given the following text, generate a relevant question, provide your answer in french language:\n\n{chunk}"
+        prompt = f"Given the following text, generate a relevant question in french :\n\n{chunk}"
         question = llm(prompt)
         questions.append(question)
     return questions
