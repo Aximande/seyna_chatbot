@@ -22,7 +22,6 @@ def get_vectorstore_from_url(url):
     vector_store = Chroma.from_documents(document_chunks, OpenAIEmbeddings())
     return vector_store, document_chunks  # Return both the vector store and document chunks
 
-
 def get_context_retriever_chain(vector_store):
     llm = ChatOpenAI()
     retriever = vector_store.as_retriever()
@@ -51,24 +50,25 @@ def get_response(user_input):
         "chat_history": st.session_state.chat_history,
         "input": user_input
     })
-    return response['answer']
+    return response['answer'], []  # Assuming the modification to include intermediary steps
 
 def generate_questions_from_content(document_chunks):
-    """Generate questions from the website content."""
     questions = []
     llm = OpenAI()
-    #print(llm("Hello, world!"))
     for chunk in document_chunks[:3]:  # Limit to first 3 chunks for demonstration
-        prompt = f"Given the following text, generate a relevant question:\n\n{chunk}"
+        prompt = f"Given the following text, generate a relevant question in French :\n\n{chunk}"
         question = llm(prompt)
         questions.append(question)
     return questions
 
-# Configuration de la page Streamlit
+# Streamlit page configuration
 st.set_page_config(page_title="Discuter avec des sites web", page_icon="🤖")
 st.title("Discuter avec des sites web 🌐")
+st.markdown("""
+**Bienvenue sur notre assistant search connecté au web**, votre outil privilégié pour interagir avec des sites : les blogs de vos concurrents, ou encore des sites officiels comme Ameli...
+""")
 
-# Barre latérale
+# Sidebar for user input
 with st.sidebar:
     st.header("Paramètres")
     website_url = st.text_input("URL du site web", help="Entrez l'URL du site web avec lequel vous souhaitez interagir.")
@@ -77,19 +77,13 @@ if not website_url:
     st.info("Veuillez entrer une URL de site web pour commencer.")
 else:
     if "chat_history" not in st.session_state:
-        st.session_state.chat_history = [
-            AIMessage(content="Bonjour, je suis un bot. Comment puis-je vous aider ?")
-        ]
+        st.session_state.chat_history = [AIMessage(content="Bonjour, je suis le bot Search Assistant de Seyna AI. Comment puis-je vous aider ?")]
 
-    # Check if vector_store does not exist in the session and then initialize it
     if "vector_store" not in st.session_state:
-        # Updated call to get_vectorstore_from_url to also receive document_chunks
         vector_store, document_chunks = get_vectorstore_from_url(website_url)
         st.session_state.vector_store = vector_store
-        # Generate questions from the content
         questions = generate_questions_from_content(document_chunks)
         st.session_state.questions = questions
-        # Optionally display the generated questions
         if questions:
             st.write("Questions Generated from the Website:")
             for question in questions:
@@ -97,14 +91,20 @@ else:
 
     user_query = st.chat_input("Tapez votre message ici...")
     if user_query:
-        response = get_response(user_query)
+        answer, intermediary_steps = get_response(user_query)
         st.session_state.chat_history.append(HumanMessage(content=user_query))
-        st.session_state.chat_history.append(AIMessage(content=response))
+        st.session_state.chat_history.append(AIMessage(content=answer))
 
-    for message in st.session_state.chat_history:
-        if isinstance(message, AIMessage):
-            with st.chat_message("IA"):
-                st.write(message.content)
-        elif isinstance(message, HumanMessage):
-            with st.chat_message("Humain"):
-                st.write(message.content)
+        for message in st.session_state.chat_history:
+            if isinstance(message, AIMessage):
+                with st.chat_message("IA"):
+                    st.write(message.content)
+            elif isinstance(message, HumanMessage):
+                with st.chat_message("Humain"):
+                    st.write(message.content)
+
+        # Optionally, display intermediary steps
+        if intermediary_steps:  # Assuming intermediary_steps is a list of steps
+            with st.expander("See how I thought this through"):
+                for step in intermediary_steps:
+                    st.json(step)  # Assuming step is in a format that st.json can render nicely
