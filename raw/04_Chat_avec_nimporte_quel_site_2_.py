@@ -44,13 +44,14 @@ def get_conversational_rag_chain(retriever_chain):
     return create_retrieval_chain(retriever_chain, stuff_documents_chain)
 
 def get_response(user_input):
+    # Assuming retriever_chain can be modified to include or return intermediary steps
     retriever_chain = get_context_retriever_chain(st.session_state.vector_store)
     conversation_rag_chain = get_conversational_rag_chain(retriever_chain)
-    response = conversation_rag_chain.invoke({
+    response, intermediary_steps = conversation_rag_chain.invoke({
         "chat_history": st.session_state.chat_history,
         "input": user_input
-    })
-    return response['answer'], []  # Assuming the modification to include intermediary steps
+    }, return_intermediary_steps=True)  # Hypothetical parameter to get steps
+    return response['answer'], intermediary_steps
 
 def generate_questions_from_content(document_chunks):
     questions = []
